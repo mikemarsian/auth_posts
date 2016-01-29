@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
 
-#gem 'serially'
-gem 'serially', :git => 'git://github.com/mikemarsian/serially.git'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -10,6 +8,9 @@ gem 'resque'
 gem 'faker', '~> 1.6'
 
 # *** front-end stuff ***
+gem 'sprockets-rails'
+gem 'sprockets'
+gem 'bootstrap-sass', '~> 3.2.0'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -22,12 +23,14 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'sdoc', '~> 0.4', group: :doc
 
-
+gem 'bcrypt', '~> 3.1'
+gem 'devise', '~> 3.4'
 
 group :development, :test do
   gem 'hirb'
+  gem 'rspec-rails'
 end
 
 group :development do
