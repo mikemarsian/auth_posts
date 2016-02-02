@@ -27,6 +27,7 @@ gem 'sdoc', '~> 0.4', group: :doc
 
 gem 'bcrypt', '~> 3.1'
 gem 'devise', '~> 3.4'
+gem 'authority'
 
 group :development, :test do
   gem 'hirb'

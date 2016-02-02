@@ -9,6 +9,12 @@ Rails.application.routes.draw do
       post :schedule_serially
     end
   end
+
+  resources :users do
+    member do
+      get :posts
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

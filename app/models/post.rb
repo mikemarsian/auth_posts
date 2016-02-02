@@ -1,3 +1,7 @@
 class Post < ActiveRecord::Base
-  has_one :author, class_name: 'User'
+  include Authority::Abilities
+
+  belongs_to :author, class_name: 'User', foreign_key: :author_id
+
+  scope :no_author, -> { where("author_id IS NULL") }
 end
