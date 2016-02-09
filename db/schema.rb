@@ -47,8 +47,7 @@ ActiveRecord::Schema.define(version: 20160202154528) do
     t.datetime "locked_at"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.boolean  "admin",                  default: false
-    t.integer  "role"
+    t.integer  "role",                   default: 0
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

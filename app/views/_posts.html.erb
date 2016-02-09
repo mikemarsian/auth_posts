@@ -28,6 +28,6 @@
 
 <br>
 
-<% if current_user.can_create?(Post) %>
+<% if user_signed_in? && current_user.can_create?(Post) %>
   <%= link_to 'New Post', new_post_path %>
 <% end %>

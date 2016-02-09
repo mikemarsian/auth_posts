@@ -61,11 +61,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def schedule_serially
-    @post.serially.start!
-    redirect_to posts_url, notice: "Scheduled Serially tasks for Post '#{@post.title}' "
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post

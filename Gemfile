@@ -32,6 +32,7 @@ gem 'authority'
 group :development, :test do
   gem 'hirb'
   gem 'rspec-rails'
+  gem 'pry'
 end
 
 group :development do

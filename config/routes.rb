@@ -1,29 +1,29 @@
 require 'resque/server'
 
 Rails.application.routes.draw do
-  devise_for :users
+
   mount Resque::Server.new, :at => "/resque"
 
-  resources :posts do
-    member do
-      post :schedule_serially
+  devise_for :user
+
+  scope module: :admin do
+    resources :users do
+      member do
+        get :posts
+      end
     end
   end
 
-  resources :users do
-    member do
-      get :posts
-    end
-  end
+
+  resources 'posts'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'posts#index'
 
-  namespace :admin do
-    get 'manage_users', to: 'admin#manage_users'
-  end
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
